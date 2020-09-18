@@ -186,6 +186,7 @@ class Player():
         self.cards.append(card)
 
     def absd(self,card):
+        '''指定用什么来进行排序'''
         return card.suite, card.face
 
     '''
@@ -195,8 +196,7 @@ class Player():
     '''
     def sort(self):
         """整理手上的牌"""
-        comp = self.absd
-        self.cards.sort(key=comp)
+        self.cards.sort(key=self.absd)
 
 def main():
     """主函数"""
