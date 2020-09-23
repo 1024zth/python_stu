@@ -95,9 +95,9 @@ class Player(object):
         self._cards_on_hand.sort(key=card_key)
 
 
-# # 排序规则-先根据花色再根据点数排序
-# def get_key(card):
-#     return (card.suite, card.face)
+# 排序规则-先根据花色再根据点数排序
+def get_key(card):
+    return (card.suite, card.face)
 
 
 def main():
@@ -110,7 +110,7 @@ def main():
                 player.get(p.next)
     for player in players:
         print(player.name + ':', end=' ')
-        player.arrange(lambda card: (card.suite,card.face))
+        player.arrange(get_key)
         print(player.cards_on_hand)
         # for _ in range(len(player.cards_on_hand)):
         #     current = 0
