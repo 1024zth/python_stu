@@ -37,7 +37,18 @@ def input_thing():
 
 def main():
     """主函数"""
+    """
+    输入：
+    20 6 
+    电脑 200 20
+    收音机 20 4
+    钟 175 10
+    花瓶 50 2
+    书 10 1
+    油画 90 9
+    """
     max_weight, num_of_things = map(int, input().split())
+    # print(map(int, input().split()))
     all_things = []
     for _ in range(num_of_things):
         all_things.append(Thing(*input_thing()))
@@ -54,7 +65,6 @@ def main():
             total_weight += thing.weight
             total_price += thing.price
     print(f'总价值: {total_price}美元')
-
 
 if __name__ == '__main__':
     main()
